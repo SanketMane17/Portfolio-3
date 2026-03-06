@@ -1,0 +1,104 @@
+Replace all placeholder/dummy content in this portfolio with the following real data for Sanket Mane. Update every section exactly as specified below:
+
+👤 Hero Section
+
+Name: Sanket Mane
+Availability badge: "Available for work 🟢"
+Typewriter roles: "Full-Stack Engineer", "Flutter Developer", "React & Next.js Engineer"
+Tagline: "Full-Stack Engineer with 3+ years building production-grade mobile & web apps"
+CTA Buttons: "View My Work" (scrolls to Projects) + "Download CV" (links to resume PDF)
+
+
+🙋 About Section
+
+Bio: "Full-Stack Engineer with 3+ years of experience building and scaling production-grade mobile and web applications using Flutter, React.js, Next.js, and Spring Boot. Experienced in shipping 0-to-1 products, integrating AI-powered features, and designing component-driven, scalable architectures."
+Stat Cards:
+
+3+ Years of Experience
+2 Products Shipped (0-to-1)
+10+ Technologies
+
+
+Location: Pune, Maharashtra
+
+
+🛠 Tech Stack / Skills Section
+Group and display exactly these technologies:
+
+Languages: JavaScript (ES6+), TypeScript, Java, Dart
+Frontend: React.js, Next.js, Flutter, PWA, Tailwind CSS, Material UI, Shadcn UI
+Backend: Spring Boot, Node.js, RESTful APIs, Puppeteer
+State Management: Riverpod, Redux, Zustand, Context API
+DevOps & Tools: Git, GitHub Actions, CI/CD, Firebase, Postman, VS Code, Shorebird
+AI Tools: GitHub Copilot, Windsurf
+Practices: Component-driven development, Design Systems, Figma Integration, Code Reviews
+
+
+💼 Experience / Timeline Section
+Job 1 — Most Recent:
+
+Company: BizPe (Fintech)
+Role: Founding Engineer
+Duration: December 2024 – Present
+Location: Bengaluru, Karnataka
+Highlights:
+
+Architected full-stack fintech platform with Flutter, React.js & RESTful APIs — scaled to 5,000+ users
+Built AI-powered voice billing using Speech-to-Text + LLM pipelines, reducing invoice creation time by ~80%
+Built cross-platform component library with Figma tokens and Google Material Design
+Owned CI/CD pipelines with GitHub Actions and Shorebird OTA for daily deployments
+Improved app startup time by ~35% via deferred initialization
+
+
+
+Job 2:
+
+Company: Multiply (Pidilite)
+Role: Frontend Engineer
+Duration: December 2022 – December 2024
+Location: Bengaluru, Karnataka
+Highlights:
+
+Joined as 2nd frontend engineer in a 0-to-1 startup, building across React.js, Next.js & Flutter
+Owned multi-role RBAC dashboard — primary revenue-driving business operations interface
+Built contractor attendance system covering attendance, salary & leave management
+Led PWA to Flutter migration, improving native platform support
+Reduced bundle size by ~35% via memoization, code splitting & lazy loading
+
+
+
+
+🚀 Projects Section
+Project 1 — Featured:
+
+Title: Video Conferencing Application
+Duration: Jul 2024 – Aug 2024
+Description: Real-time video conferencing app with WebRTC-based audio/video communication, OAuth authentication and protected routes using Clerk for secure session management.
+Tech Tags: Next.js, TypeScript, Stream SDK, Clerk, Shadcn UI, Tailwind CSS, Vercel
+Buttons: Live Demo (link it) + GitHub
+
+
+📬 Contact Section
+
+Email: msanket450@gmail.com (with copy-to-clipboard button)
+Phone: +91-9422555950
+LinkedIn: linkedin.com/in/sanket-mane
+GitHub: github.com/sanket-mane
+Location: Pune, Maharashtra
+
+
+🎓 Education Section (add if not present)
+
+Degree: Bachelor's in Computer Science
+College: Tuljaram Chaturchand College, Baramati
+Duration: June 2019 – April 2022
+CGPA: 9.7
+
+
+⚙️ Final Instructions
+
+Keep all existing animations, styles, dark theme, and glassmorphism design intact
+Do NOT change any colors, fonts, or layout
+Only swap out text content, links, and tag data
+Make sure all section anchor links in the navbar work correctly after updates
+Ensure the page is fully responsive after all data is filled in

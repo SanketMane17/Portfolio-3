@@ -1,0 +1,82 @@
+Build a stunning, fully responsive developer/engineer portfolio website using React + Tailwind CSS. Follow these exact specifications:
+
+🎨 Design System
+
+Background: Deep dark #0A0A0F and #0D1117
+Accents: Neon cyan #00F5FF, Electric violet #7C3AED, Amber gold #F59E0B
+Text: White #FFFFFF for headings, #94A3B8 for body
+Cards: Glassmorphism — bg-white/5, backdrop-blur-md, subtle border border-white/10
+Fonts: Space Grotesk for headings, Inter for body (import from Google Fonts)
+Subtle animations only: fade-in on scroll, smooth hover transitions (no jarring effects)
+
+
+🧭 Navigation
+
+Sticky frosted-glass navbar (backdrop-blur, semi-transparent dark bg)
+Logo/name on the left in gradient text (cyan → violet)
+Nav links: Hero, About, Skills, Projects, Experience, Contact — smooth scroll on click
+Active link underline animation
+"Hire Me" CTA button with gradient border, glows subtly on hover
+
+
+1. Hero Section
+
+Full viewport height, dark background with subtle dot-grid pattern overlay
+Small badge at top: "Available for work 🟢" pill in glowing green
+Giant bold name heading with gradient text (cyan to violet)
+Subheading: role title with a typewriter effect cycling through 2–3 roles (e.g. "Full Stack Developer", "Problem Solver", "Open Source Contributor")
+Short one-liner bio below
+Two CTA buttons: "View My Work" (solid gradient) + "Download CV" (ghost/outline)
+Subtle floating tech icons or particle mesh in background (CSS only, no heavy libraries)
+
+
+2. About Section
+
+Two-column layout (desktop), stacked on mobile
+Left: Profile photo placeholder with glowing gradient border frame
+Right: 3–4 lines bio, then 3 stat cards (Years Experience, Projects Completed, Technologies)
+Stat cards: glassmorphism style with accent-colored numbers
+
+
+3. Tech Stack / Skills
+
+Section heading with gradient underline
+Skills grouped by category: Languages, Frameworks, Tools, Cloud
+Each skill: pill/badge with icon, name, subtle glow on hover
+Grid layout, responsive
+
+
+4. Projects
+
+3-column card grid on desktop, 1-column on mobile
+Each card: glassmorphism, project image placeholder at top, tech stack tags, title, short description, GitHub + Live Demo icon buttons
+First/featured project: full-width spotlight card with larger image area and gradient border
+Subtle card lift + border glow on hover (translateY(-4px), transition)
+
+
+5. Experience / Timeline
+
+Vertical center line with glowing dot nodes
+Each entry: Company, Role, Date range, 2–3 bullet achievements
+Alternating left/right layout on desktop, single column on mobile
+Node pulses subtly with CSS animation
+
+
+6. Contact
+
+Bold large heading: "Let's Build Something Together"
+Email displayed prominently with a copy-to-clipboard button
+Social icon buttons: GitHub, LinkedIn, Twitter — glassmorphism circle buttons, glow on hover
+Simple contact form: Name, Email, Message fields (dark styled inputs with glowing focus border), Submit button
+
+
+⚙️ Technical Requirements
+
+React with functional components and hooks
+Tailwind CSS for all styling
+Framer Motion for subtle scroll-triggered fade-ins (initial opacity:0 y:20 → animate opacity:1 y:0)
+Fully mobile responsive (375px → 1440px)
+Smooth scroll behavior globally
+All placeholder content should be realistic (use a fictional but believable developer profile)
+Clean, commented component structure: one file per section
+No external UI libraries (shadcn/MUI) — pure Tailwind + Framer Motion only
