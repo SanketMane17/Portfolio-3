@@ -25,12 +25,12 @@ export function Projects() {
       featured: true,
     },
     {
-      title: "Fintech Accounting Platform",
-      duration: "2024",
-      description: "An enterprise-grade financial management platform for businesses to track collections, manage cash flow, and monitor transactions. Features intuitive dashboards for quick actions and comprehensive reporting tools.",
+      title: "BizPe",
+      duration: "December 2024 – Present",
+      description: "A fintech platform for SMBs in India, BizPe simplifies payment collection, reconciliation, and cash flow management with seamless ERP integration and a user-friendly mobile interface. Features integrated AI-powered voice billing using Speech-to-Text and LLM pipelines.",
       image: fintech,
-      tags: ["React", "Financial Management", "Dashboard", "Data Visualization", "Mobile-First"],
-      links: { github: "https://github.com", live: "#" },
+      tags: ["Flutter", "React.js", "RESTful APIs", "GitHub Actions", "Shorebird", "Integrated AI"],
+      links: { github: "https://github.com/SanketMane17", live: "https://bizpe.onelink.me/dWcg/21k6wgyp" },
       featured: true,
     }
   ];
@@ -62,12 +62,12 @@ export function Projects() {
                 
                 {/* Image Container */}
                 <div className="w-full lg:w-3/5 group relative rounded-2xl overflow-hidden glass-card p-2">
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
+                  <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: 'auto' }}>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0F]/80 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <img 
                       src={project.image} 
                       alt={project.title} 
-                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                 </div>
