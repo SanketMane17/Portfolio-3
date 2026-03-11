@@ -9,9 +9,9 @@ export function Projects() {
     {
       title: "StreamMate",
       duration: "2024",
-      description: "A real-time video conferencing platform featuring WebRTC-based audio/video communication, instant meeting creation, scheduled meetings, and recording capabilities. Built with modern web technologies for seamless user experience.",
+      description: "Built real-time video conferencing app with Next.js and Stream SDK for WebRTC-based audio/video communication. Implemented OAuth authentication and protected routes using Clerk for secure session management.",
       image: streammatePng,
-      tags: ["WebRTC", "React", "Real-time Communication", "Material UI", "Cloud Storage"],
+      tags: ["Next.js", "TypeScript", "Stream SDK", "Clerk", "Shadcn UI", "Tailwind CSS", "Vercel"],
       links: { github: "https://github.com", live: "#" },
       featured: true,
     },
