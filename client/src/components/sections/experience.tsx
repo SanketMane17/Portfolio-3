@@ -8,7 +8,7 @@ export function Experience() {
       role: "Founding Engineer",
       company: "BizPe – Antler-backed Fintech Startup",
       period: "December 2024 – Present",
-      location: "Bengaluru, Pune",
+      location: "Bengaluru, Karnataka",
       highlights: [
         "Architected full-stack fintech platform with Flutter, React.js, and RESTful APIs, scaling to 5,000+ users",
         "Built AI-powered voice billing using Speech-to-Text and LLM pipelines, reducing invoice creation time by ~80%",
@@ -25,7 +25,7 @@ export function Experience() {
       role: "Frontend Engineer",
       company: "Multiply (Pidilite)",
       period: "December 2022 – December 2024",
-      location: "Bengaluru, Pune",
+      location: "Bengaluru, Karnataka",
       highlights: [
         "Joined as 2nd frontend engineer in a 0-to-1 startup, building core product across React.js, Next.js, and Flutter",
         "Owned multi-role RBAC dashboard serving as the primary revenue-driving business operations interface",
@@ -41,7 +41,7 @@ export function Experience() {
       role: "Student Developer",
       company: "Crio.Do · Internship",
       period: "Jun 2022 - Sep 2022",
-      location: "Bengaluru, Pune · Remote",
+      location: "Bengaluru, Karnataka · Remote",
       highlights: [
         "Built and deployed real-world projects during an industry-oriented developer program.",
         "Gained hands-on experience with backend, frontend, and full-stack workflows, preparing for real-world engineering challenges."

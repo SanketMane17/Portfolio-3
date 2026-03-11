@@ -135,7 +135,7 @@ export function Contact() {
                   <div>
                     <p className="text-sm text-muted-foreground font-medium mb-1">Location</p>
                     <p className="text-lg font-medium text-white">
-                      Bengaluru, Pune
+                      Bengaluru, Karnataka
                     </p>
                   </div>
                 </div>
