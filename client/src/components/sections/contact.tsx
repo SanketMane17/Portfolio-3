@@ -9,7 +9,10 @@ import { z } from "zod";
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Please enter a valid email address").min(1, "Email is required"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters").refine(
+    (val) => val.trim().length > 0,
+    "Message cannot be empty"
+  ),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -24,15 +27,15 @@ export function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
+      const formData = new FormData();
+      formData.append("form-name", "contact");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
+
       const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          "form-name": "contact",
-          name: data.name,
-          email: data.email,
-          message: data.message,
-        }).toString(),
+        body: formData,
       });
 
       if (response.ok) {
