@@ -33,8 +33,8 @@ export function About() {
           </div>
         </FadeIn>
 
-        <div className="grid lg:grid-cols-5 gap-12">
-          <FadeIn delay={0.2} className="lg:col-span-2 flex flex-col justify-center">
+        <div className="grid lg:grid-cols-5 gap-12 lg:items-start">
+          <FadeIn delay={0.2} className="lg:col-span-2 flex flex-col justify-start lg:justify-start">
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               Frontend heavy full stack engineer with experience building and scaling production-grade mobile and web applications using Flutter, React.js, Next.js, and Spring Boot. Experienced in shipping 0-to-1 products, integrating AI-powered features, and designing component-driven, scalable architectures.
             </p>
