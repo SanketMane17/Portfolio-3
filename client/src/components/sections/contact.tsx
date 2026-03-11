@@ -1,32 +1,37 @@
 import { FadeIn } from "@/components/ui/fade-in";
-import { Mail, MapPin, Send, Phone, Github, Linkedin, Copy, Check } from "lucide-react";
+import { Mail, MapPin, Send, Phone, Github, Linkedin, Copy, Check, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().email("Please enter a valid email address").min(1, "Email is required"),
+  message: z.string().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export function Contact() {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: "onBlur",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
+  const onSubmit = async (data: ContactFormData) => {
     try {
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
           "form-name": "contact",
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
+          name: data.name,
+          email: data.email,
+          message: data.message,
         }).toString(),
       });
 
@@ -36,7 +41,7 @@ export function Contact() {
           description: "Thank you for reaching out. I'll get back to you soon.",
           className: "bg-white/10 backdrop-blur-md border-white/20 text-white",
         });
-        setFormData({ name: "", email: "", message: "" });
+        reset();
       } else {
         throw new Error("Failed to send message");
       }
@@ -46,8 +51,6 @@ export function Contact() {
         title: "Error",
         description: "Failed to send message. Please try again later.",
       });
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -142,7 +145,7 @@ export function Contact() {
           </FadeIn>
 
           <FadeIn delay={0.3} direction="left">
-            <form onSubmit={onSubmit} name="contact" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} name="contact" method="POST" className="space-y-6">
               <input type="hidden" name="form-name" value="contact" />
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -150,29 +153,43 @@ export function Contact() {
                   <label htmlFor="name" className="text-sm font-medium text-white/80 pl-1">Your Name</label>
                   <input
                     id="name"
-                    name="name"
                     type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 focus:border-[#00F5FF] transition-all"
                     placeholder="John Doe"
                     disabled={isSubmitting}
+                    {...register("name")}
+                    className={`w-full px-5 py-4 rounded-xl bg-white/5 border text-white placeholder:text-white/30 focus:outline-none focus:ring-2 transition-all ${
+                      errors.name 
+                        ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400" 
+                        : "border-white/10 focus:ring-[#00F5FF]/50 focus:border-[#00F5FF]"
+                    }`}
                   />
+                  {errors.name && (
+                    <div className="flex items-center gap-2 text-red-400 text-sm pl-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.name.message}
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-white/80 pl-1">Email Address</label>
                   <input
                     id="email"
-                    name="email"
                     type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED] transition-all"
                     placeholder="john@example.com"
                     disabled={isSubmitting}
+                    {...register("email")}
+                    className={`w-full px-5 py-4 rounded-xl bg-white/5 border text-white placeholder:text-white/30 focus:outline-none focus:ring-2 transition-all ${
+                      errors.email 
+                        ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400" 
+                        : "border-white/10 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED]"
+                    }`}
                   />
+                  {errors.email && (
+                    <div className="flex items-center gap-2 text-red-400 text-sm pl-1">
+                      <AlertCircle className="w-4 h-4" />
+                      {errors.email.message}
+                    </div>
+                  )}
                 </div>
               </div>
               
@@ -180,15 +197,22 @@ export function Contact() {
                 <label htmlFor="message" className="text-sm font-medium text-white/80 pl-1">Message</label>
                 <textarea
                   id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
                   rows={5}
-                  className="w-full px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-[#F59E0B]/50 focus:border-[#F59E0B] transition-all resize-none"
                   placeholder="Tell me about your project..."
                   disabled={isSubmitting}
+                  {...register("message")}
+                  className={`w-full px-5 py-4 rounded-xl bg-white/5 border text-white placeholder:text-white/30 focus:outline-none focus:ring-2 transition-all resize-none ${
+                    errors.message 
+                      ? "border-red-400/50 focus:ring-red-400/50 focus:border-red-400" 
+                      : "border-white/10 focus:ring-[#F59E0B]/50 focus:border-[#F59E0B]"
+                  }`}
                 />
+                {errors.message && (
+                  <div className="flex items-center gap-2 text-red-400 text-sm pl-1">
+                    <AlertCircle className="w-4 h-4" />
+                    {errors.message.message}
+                  </div>
+                )}
               </div>
 
               <button

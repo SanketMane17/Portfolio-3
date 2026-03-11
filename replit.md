@@ -20,7 +20,8 @@ A modern, responsive, fully client-side portfolio website built with React, Type
 - **Frontend**: React 18, TypeScript, Tailwind CSS
 - **Build Tool**: Vite
 - **UI Components**: Shadcn UI
-- **Forms**: Netlify Forms (client-side only)
+- **Forms**: Netlify Forms with react-hook-form & Zod validation (client-side only)
+- **Validation**: Zod schema with email validation, real-time error messages
 - **Styling**: Custom CSS with glass-morphism effects
 - **Routing**: Wouter
 - **No Backend**: Fully static site for Netlify deployment
@@ -111,9 +112,25 @@ All backend code has been removed:
 - ❌ No API endpoints
 - ✅ Contact form uses Netlify Forms (client-side only)
 
+## Form Validation
+
+The contact form includes comprehensive client-side validation:
+- **Name**: 2-100 characters required
+- **Email**: Valid email format required (RFC 5322 compliant)
+- **Message**: 10-1000 characters required
+- **Real-time Feedback**: Validation on blur with inline error messages
+- **Error Display**: Alert icons with descriptive messages
+- **Visual Feedback**: Red border and focus ring on invalid fields
+
+Validation is implemented using:
+- `Zod` for schema definition and type inference
+- `react-hook-form` for form state management
+- `@hookform/resolvers/zod` for integration
+
 ## Notes
 
 - The app is fully responsive and mobile-friendly
 - All images use dynamic aspect ratios
 - The build is optimized for production with code splitting and minification
 - Zero server costs - fully static site
+- Contact form validates all fields before submission to Netlify
