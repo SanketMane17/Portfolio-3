@@ -7,7 +7,7 @@ export function Experience() {
       id: 1,
       role: "Founding Engineer",
       company: "BizPe – Antler-backed Fintech Startup",
-      period: "December 2024 – Present",
+      period: "Dec 2024 – Present",
       location: "Bengaluru, Karnataka",
       highlights: [
         "Architected full-stack fintech platform with Flutter, React.js, and RESTful APIs, scaling to 5,000+ users",
@@ -24,7 +24,7 @@ export function Experience() {
       id: 2,
       role: "Frontend Engineer",
       company: "Multiply (Pidilite)",
-      period: "December 2022 – December 2024",
+      period: "Dec 2022 – Dec 2024",
       location: "Bengaluru, Karnataka",
       highlights: [
         "Joined as 2nd frontend engineer in a 0-to-1 startup, building core product across React.js, Next.js, and Flutter",

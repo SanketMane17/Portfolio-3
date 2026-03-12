@@ -13,13 +13,53 @@ export function About() {
   ];
 
   const techStack = [
-    "JavaScript", "TypeScript", "Java", "Dart", "React.js", "Next.js", "Flutter", "Spring Boot", "Node.js", 
-    "Tailwind CSS", "Firebase", "CI/CD", "Riverpod", "Redux", "Zustand", "GitHub Copilot", "Windsurf", "Shorebird", "PWA"
-  ];
+  // Frontend Development
+  "React.js",
+  "Next.js",
+
+  // Frontend Architecture & System Design
+  "Frontend System Design",
+  "Design Systems",
+  "Micro-Frontends",
+  "Performance Optimization",
+  "SSR",
+  "Code Splitting",
+
+  // Mobile Development
+  "Flutter",
+
+  // Backend Development
+  "Node.js",
+  "Spring Boot",
+
+  // Languages
+  "JavaScript",
+  "TypeScript",
+  "Dart",
+  "Java",
+
+  // State Management
+  "Redux",
+  "Zustand",
+  "Riverpod",
+
+  // Styling
+  "Tailwind CSS",
+
+  // Platforms
+  "Firebase",
+  "PWA",
+
+  // Developer Tools
+  "CI/CD",
+  "GitHub Copilot",
+  "Windsurf",
+  "Shorebird"
+];
 
   const stats = [
     { label: "Frontend heavy full stack", value: "Expertise", color: "text-[#00F5FF]" },
-    { label: "Products Shipped", value: "3", color: "text-[#7C3AED]" },
+    // { label: "Products Shipped", value: "3", color: "text-[#7C3AED]" },
     { label: "Technologies", value: "15+", color: "text-[#F59E0B]" },
   ];
 

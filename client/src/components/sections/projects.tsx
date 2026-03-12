@@ -8,7 +8,7 @@ export function Projects() {
   const projects = [
     {
       title: "BizPe – Antler-backed Fintech Startup",
-      duration: "December 2024 – Present",
+      duration: "Dec 2024 – Present",
       description: "A fintech platform for SMBs in India, BizPe simplifies payment collection, reconciliation, and cash flow management with seamless ERP integration and a user-friendly mobile interface. Features integrated AI-powered voice billing using Speech-to-Text and LLM pipelines.",
       image: bizpePng,
       tags: ["Flutter", "React.js", "RESTful APIs", "GitHub Actions", "Shorebird", "Spring Boot", "Puppeteer", "Figma Integration", "AI Integration"],
