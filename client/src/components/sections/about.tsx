@@ -79,7 +79,7 @@ export function About() {
               Frontend heavy full stack engineer with 3+ years of experience building and scaling production-grade mobile and web applications using Flutter, React.js, Next.js, and Spring Boot. Experienced in shipping 0-to-1 products, integrating AI-powered features, and designing component-driven, scalable architectures.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {stats.map((stat, i) => (
                 <div key={i} className="glass-card p-4 rounded-xl text-center">
                   <div className={`text-2xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
